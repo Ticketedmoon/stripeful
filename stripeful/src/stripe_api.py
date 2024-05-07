@@ -1,5 +1,7 @@
 import requests
 
+from constants import Constants
+
 def main():
     create_customer_form_url_encoded()
 
@@ -12,7 +14,7 @@ def create_customer_form_url_encoded():
     }
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Bearer sk_test_51PDqmNISp174ZvTlO1501gVtqkLEH1JuWKJU8UmU5DMCPFncPyZCE6nXPZMfZ3hVT3jPGDLV3ssSVh06T4B3StRb00HykB78cA'
+        'Authorization': 'Bearer {0}'.format(Constants.STRIPE_API_KEY)
     }
 
     response = requests.post(url, data=body, headers=headers)
@@ -29,7 +31,7 @@ def create_customer_json():
     }
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Bearer sk_test_51PDqmNISp174ZvTlO1501gVtqkLEH1JuWKJU8UmU5DMCPFncPyZCE6nXPZMfZ3hVT3jPGDLV3ssSVh06T4B3StRb00HykB78cA'
+        'Authorization': 'Bearer {0}'.format(Constants.STRIPE_API_KEY)
     }
 
     response = requests.post(url, json=body, headers=headers)
